@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id="Credit" class="ai.ineuron.beans.CreditCardPay"></bean>
+     <bean id="Debit" class="ai.ineuron.beans.DebitCardPay"/>
+     
+     <bean id="Payment" class="ai.ineuron.beans.paymentProcess">
+   <property name="pay" ref="Debit"></property>  
+  <constructor-arg name="pay" ref="Credit"></constructor-arg>
+     
+     </bean>
+    <!-- Your bean definitions go here -->
+</beans>
